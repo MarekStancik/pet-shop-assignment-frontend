@@ -1,0 +1,22 @@
+.pet-card{
+    margin: 1%; 
+    width: 18rem; 
+    background-color: rgb(237,20,90, 0.6);
+    color: rgb(0, 0, 0);
+   // box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 5px;
+}
+
+.pet-card h5{
+    text-transform: uppercase;
+}
+
+.pet-card h6{
+
+}
+
+.buy-button{
+    color: white;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    background-color: rgb(24,192,240);
+}

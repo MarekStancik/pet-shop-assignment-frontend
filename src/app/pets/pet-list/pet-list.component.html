@@ -1,14 +1,29 @@
-<div *ngIf="pets" class="basic-item-list">
+<div *ngIf="pets">
     <div class="container">
-        <div class="row">
-            <ul class="col">
-                <li *ngFor="let pet of pets" (click)="onSelect(pet)">
-                    <span>{{pet.name}} {{pet.type}}</span>
-                </li>
-            </ul>
-            <div class="col">
+        <div class="row justify-content-center" style="background-color: rgb(0,0,0,0.5);">
+                <!--<ul class="list-group">
+                    <li *ngFor="let pet of pets" class="list-group-item" [class.active]="selectedPet === pet" (click)="onSelect(pet)">
+                        <span>{{pet.name}} {{pet.type}}</span>
+                    </li>
+                </ul>
+                -->
+
+                <div *ngFor="let pet of pets" class="card pet-card">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBx3jZ7-WqEYcRF38gmxvL6MK_8L_CynGwRdfIcgIKJW1XHQZY&s" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{pet.name}}</h5>
+                        <p class="card-text">{{pet.type}}</p>
+                        <div class="d-flex flex-row">
+                            <h6 class="p-2">{{pet.price}} treats</h6>
+                            <div class="p-2">
+                                <a href="#" class="btn buy-button">Buy this beautiful baby boy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          <!--  <div class="col">
                 <app-pet-detail *ngIf="selectedPet" [pet]="selectedPet"></app-pet-detail>
-            </div>    
+            </div>    -->
         </div>
     </div>
 </div>

@@ -23,7 +23,30 @@
     </div>
 
     <div class="col" style="text-align: center">
-        <legend>Register</legend>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <fieldset>
+                <legend>Register</legend>
+                <div class="form-field">
+                    <label>Name:</label>
+                    <input name="name" formControlName="username">
+                </div>
+                <div class="form-field">
+                    <label>Password:</label>
+                    <input name="password" formControlName="password" 
+                        type="password">
+                </div>
+
+                <div class="form-field">
+                    <label>Repeat password:</label>
+                    <input name="password" formControlName="passwordRepeat" 
+                        type="password">
+                </div>
+            </fieldset>
+
+            <div class="form-buttons">
+                <button type="submit" class="button button-primary">Register</button>
+            </div>
+        </form>
     </div>
 </div>
 </div>

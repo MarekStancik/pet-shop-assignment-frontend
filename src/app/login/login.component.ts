@@ -15,6 +15,13 @@ export class LoginComponent implements OnInit {
     password: new FormControl('')
   });
 
+  registerForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+    passwordRepeat: new FormControl('')
+  });
+
+
   isWrongPass = false;
 
   constructor(private authService: AuthService,private router: Router) { }
@@ -41,6 +48,10 @@ export class LoginComponent implements OnInit {
         }
         );
     }
+  }
+
+  register(){
+    const val = this.registerForm.value;
   }
 
 }
