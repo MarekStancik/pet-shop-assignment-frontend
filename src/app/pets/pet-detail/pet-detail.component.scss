@@ -1,0 +1,23 @@
+.detail{
+    padding: 10px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+.detail h2{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.test div{
+    border-bottom-width: 1px;
+    border-bottom-color: cornflowerblue;
+    border-bottom-style: solid;
+    width: 45%;
+    margin-bottom: 5px;
+}
+
+.test span{
+    display: inline-block;
+    width: 80px;
+}

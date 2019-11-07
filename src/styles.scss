@@ -1,1 +1,46 @@
+@import '~bootstrap/dist/css/bootstrap.css';
 /* You can add global styles to this file, and also import other style files */
+.basic-item-list h2 {
+    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+   
+  .basic-item-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 55%;
+    float: left;
+  }
+    
+  .basic-item-list li:last-child {
+    border: none;
+  }
+  
+  .basic-item-list li{
+      font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+      border-bottom: 1px solid #ccc;
+      text-decoration: none;
+      color: #000;
+      display: block;
+  
+      -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+      -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+      -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+      -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+      transition: font-size 0.3s ease, background-color 0.3s ease;
+  }
+     
+  .basic-item-list li:hover {
+      background: #7c7a7a;
+  }
+
+  .basic-item-list li:active {
+    background: #b16565;
+}
+
+body {
+  background-color: lightblue;
+}
+

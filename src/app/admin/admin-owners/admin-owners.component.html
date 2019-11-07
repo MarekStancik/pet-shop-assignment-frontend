@@ -1,0 +1,52 @@
+<div class="basic-item-list">   
+    <ul>
+        <button (click)="prepareCreate()">Add new owner</button>
+        <li *ngFor="let owner of owners" (click)="onSelect(owner)">
+            <a>{{owner.firstName}} {{owner.lastName}}</a>
+            <button style="margin-left: 20px"(click)="onDelete(owner)">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<form *ngIf="isCreating || selectedOwner" [formGroup]="ownerForm" (ngSubmit)="save()">
+    <h3 *ngIf="isCreating">New Owner</h3>
+    <h3 *ngIf="!isCreating">{{selectedOwner.name | uppercase}} {{selectedOwner.type}} </h3>
+    
+    <p>
+        <label>
+            First name:
+            <input type="text" formControlName="firstName">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Last name:
+            <input type="text" formControlName="lastName">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Address:
+            <input type="text" formControlName="address">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Phone number:
+            <input type="text" formControlName="phoneNumber">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Email:
+            <input type="text" formControlName="email">
+        </label>
+    </p>
+
+    <button type="submit">Save</button>
+
+</form>

@@ -1,0 +1,52 @@
+<div class="pet-list">   
+    <ul>
+        <button (click)="prepareCreate()">Add new pet</button>
+        <li *ngFor="let pet of pets" (click)="onSelect(pet)">
+            <a>{{pet.name}} {{pet.type}}</a>
+            <button style="margin-left: 20px"(click)="onDelete(pet)">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<form *ngIf="isCreating || selectedPet" [formGroup]="petForm" (ngSubmit)="save()">
+    <h3 *ngIf="isCreating">New Pet</h3>
+    <h3 *ngIf="!isCreating">{{selectedPet.name | uppercase}} {{selectedPet.type}} </h3>
+    
+    <p>
+        <label>
+            Name:
+            <input type="text" formControlName="name">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Type:
+            <input type="text" formControlName="type">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Birth Date:
+            <input type="text" formControlName="birthDate">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Sold date:
+            <input type="text" formControlName="soldDate">
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Price:
+            <input type="text" formControlName="price">
+        </label>
+    </p>
+
+    <button type="submit">Save</button>
+
+</form>

@@ -1,0 +1,14 @@
+<div *ngIf="pets" class="basic-item-list">
+    <div class="container">
+        <div class="row">
+            <ul class="col">
+                <li *ngFor="let pet of pets" (click)="onSelect(pet)">
+                    <span>{{pet.name}} {{pet.type}}</span>
+                </li>
+            </ul>
+            <div class="col">
+                <app-pet-detail *ngIf="selectedPet" [pet]="selectedPet"></app-pet-detail>
+            </div>    
+        </div>
+    </div>
+</div>
