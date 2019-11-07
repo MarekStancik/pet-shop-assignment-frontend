@@ -15,6 +15,7 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 import { AdminOwnersComponent } from './admin/admin-owners/admin-owners.component';
 import { LoginComponent } from './login/login.component';
+import { AdminAuthGuard } from './guards/admin-auth-guard';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [AdminAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
