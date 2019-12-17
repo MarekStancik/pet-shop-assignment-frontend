@@ -3,12 +3,12 @@
         <div class="col">
             <div class="basic-list">   
                 <ul>
-                    <button (click)="prepareCreate()">Add new pet</button>
+                    <li (click)="prepareCreate()" [class.active]="isCreating">Add new pet</li>
                     <li *ngFor="let pet of pets"
-                        [ngClass]="{active: pet === selectedPet}"
-                        (click)="onSelect(pet)">
+                        (click)="onSelect(pet)"
+                        [class.active]="pet === selectedPet"
+                        >
                         <a>{{pet.name}} {{pet.type}}</a>
-                        <button style="margin-left: 20px"(click)="onDelete(pet)">Delete</button>
                     </li>
                 </ul>
             </div>
@@ -55,6 +55,7 @@
                 </p>
 
                 <button type="submit">Save</button>
+                <button *ngIf="selectedPet" (click)="onDelete(selectedPet)">Delete</button>
 
             </form>
         </div>

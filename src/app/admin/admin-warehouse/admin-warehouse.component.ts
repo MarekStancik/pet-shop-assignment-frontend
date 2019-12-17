@@ -62,6 +62,7 @@ export class AdminWarehouseComponent implements OnInit {
 
   prepareCreate(){
     this.isCreating=true;
+    this.selectedPet= null;
     this.petForm.reset();
   }
 

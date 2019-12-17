@@ -47,6 +47,7 @@ export class AdminOwnersComponent implements OnInit {
    */
   prepareCreate(){
     this.isCreating=true;
+    this.selectedOwner = null;
     this.ownerForm.reset();
   }
 

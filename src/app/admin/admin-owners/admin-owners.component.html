@@ -1,16 +1,14 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col">   
-                <ul class="list-group">
-                    <button class="list-group-item"(click)="prepareCreate()">Add new owner</button>
-                    <li *ngFor="let owner of owners" 
-                        (click)="onSelect(owner)" 
-                        class="list-group-item"
-                        [class.active]="owner === selectedOwner">
-                        <a>{{owner.firstName}} {{owner.lastName}}</a>
-                        <button style="margin-left: 20px"(click)="onDelete(owner)">Delete</button>
-                    </li>
-                </ul>
+        <div class="col basic-list">   
+            <ul>
+                <li (click)="prepareCreate()">ADD NEW OWNER</li>
+                <li *ngFor="let owner of owners" 
+                    (click)="onSelect(owner)"
+                    [class.active]="owner === selectedOwner">
+                    <a>{{owner.firstName}} {{owner.lastName}}</a>
+                </li>
+            </ul>
         </div>
 
         <div class="col">
@@ -54,7 +52,7 @@
                 </p>
 
                 <button type="submit">Save</button>
-
+                <button *ngIf="selectedOwner" (click)="onDelete(selectedOwner)">Delete</button>
             </form>
         </div>
     </div>

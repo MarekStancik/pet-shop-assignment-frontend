@@ -20,7 +20,7 @@ export class AuthService {
       const isAdmin = response.isAdmin;
 
       if(token){
-        localStorage.setItem('currentUser',JSON.stringify({username,password,isAdmin,token: token}));
+        localStorage.setItem('currentUser',JSON.stringify({username,password,isAdmin,token}));
         return true;
       }else{
         return false;
@@ -30,17 +30,17 @@ export class AuthService {
 
   getToken(): string {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser && currentUser.token;
+    return currentUser ? currentUser.token : null;
   }
 
   getUsername(): string {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser && currentUser.username;
+    return currentUser ? currentUser.username : null;
   }
 
   isUserAdmin() : boolean{
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser && currentUser.isAdmin;
+    return currentUser ? currentUser.isAdmin : false;
   }
 
   logout(): void {
